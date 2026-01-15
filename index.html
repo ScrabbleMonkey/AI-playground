@@ -2,252 +2,214 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Defence & Security Herald - Home</title>
+    <title>UK Defence Mail Online – News, Defence, Cyber &amp; Opinion</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
+        *{box-sizing:border-box;margin:0;padding:0}
+        body{
+            font-family:Georgia,"Times New Roman",serif;
+            background:#f2f2f2;
+            color:#111;
+        }
+        a{text-decoration:none;color:#003366}
+        a:hover{text-decoration:underline}
+        .page{
+            max-width:1240px;
+            margin:0 auto;
+            background:#fff;
+            border-left:1px solid #ccc;
+            border-right:1px solid #ccc;
+        }
+        /* MASTHEAD */
+        .top-bar{
+            background:#003366;
+            color:#fff;
+            padding:6px 12px;
+            font-size:12px;
+        }
+        .masthead{
+            text-align:center;
+            padding:14px 10px 8px;
+            border-bottom:3px solid #003366;
+        }
+        .masthead-title{
+            font-family:"Times New Roman",serif;
+            font-size:40px;
+            letter-spacing:1px;
+        }
+        .masthead-sub{
+            font-size:13px;
+            color:#666;
+            margin-top:4px;
+        }
+        .nav{
+            display:flex;
+            flex-wrap:wrap;
+            justify-content:center;
+            gap:16px;
+            padding:8px 10px;
+            border-bottom:1px solid #ddd;
+            font-size:14px;
+            font-weight:bold;
+        }
+        .nav a{color:#003366}
+
+        /* LAYOUT */
+        .content{
+            display:grid;
+            grid-template-columns:3fr 1.2fr;
+            gap:12px;
+            padding:14px;
+        }
+        @media(max-width:900px){
+            .content{grid-template-columns:1fr}
         }
 
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-            background: #f4f4f4;
-            color: #222;
-            line-height: 1.7;
-            font-size: 18px;
+        /* MAIN COLUMN */
+        .lead{
+            border-bottom:1px solid #ddd;
+            padding-bottom:10px;
+            margin-bottom:10px;
+        }
+        .lead h1{
+            font-size:30px;
+            line-height:1.1;
+            margin-bottom:6px;
+        }
+        .lead .summary{
+            font-size:16px;
+            color:#444;
+            margin-bottom:6px;
+        }
+        .meta{
+            font-size:12px;
+            color:#777;
+            margin-bottom:4px;
+        }
+        .lead img{
+            width:100%;
+            height:220px;
+            object-fit:cover;
+            background:#ddd;
+            margin:6px 0;
         }
 
-        a {
-            color: inherit;
-            text-decoration: none;
+        .sub-grid{
+            display:grid;
+            grid-template-columns:1fr 1fr;
+            gap:10px;
+        }
+        @media(max-width:700px){
+            .sub-grid{grid-template-columns:1fr}
+        }
+        .teaser{
+            border-top:1px solid #eee;
+            padding-top:6px;
+            font-size:14px;
+        }
+        .teaser h2{
+            font-size:18px;
+            margin-bottom:4px;
+        }
+        .teaser p{
+            font-size:14px;
+            color:#444;
         }
 
-        a:hover {
-            text-decoration: underline;
+        /* SIDEBAR – "RIGHT RAIL" */
+        .sidebar-block{
+            border-top:1px solid #ddd;
+            padding:8px 6px 10px;
+        }
+        .sidebar-title{
+            font-size:14px;
+            font-weight:bold;
+            color:#003366;
+            margin-bottom:6px;
+            text-transform:uppercase;
+        }
+        .side-link{
+            font-size:13px;
+            margin-bottom:6px;
         }
 
-        .page {
-            max-width: 1200px;
-            margin: 0 auto;
-            background: #ffffff;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
+        /* AD BOXES */
+        .ad{
+            border:1px solid #ccc;
+            background:#fafafa;
+            padding:10px;
+            text-align:center;
+            font-size:12px;
+            color:#555;
+            margin:8px 0;
+        }
+        .ad-title{
+            font-weight:bold;
+            margin-bottom:4px;
+            color:#003366;
         }
 
-        .header {
-            border-bottom: 3px solid #1a3a52;
-            padding: 20px 30px 10px 30px;
-            background: #ffffff;
-        }
-
-        .masthead {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            flex-wrap: wrap;
-        }
-
-        .logo {
-            font-size: 32px;
-            font-weight: 700;
-            letter-spacing: -0.5px;
-            color: #1a3a52;
-        }
-
-        .tagline {
-            font-size: 14px;
-            color: #777;
-            font-style: italic;
-            margin-top: 4px;
-        }
-
-        .nav {
-            margin-top: 12px;
-            display: flex;
-            gap: 20px;
-            font-size: 16px;
-        }
-
-        .nav a {
-            font-weight: 600;
-            color: #333;
-        }
-
-        .nav a:hover {
-            color: #1a3a52;
-        }
-
-        .content {
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 30px;
-            padding: 25px 30px 40px 30px;
-        }
-
-        @media (max-width: 900px) {
-            .content {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        .lead-story {
-            padding-bottom: 25px;
-            border-bottom: 1px solid #ddd;
-            margin-bottom: 25px;
-        }
-
-        .section-label {
-            font-size: 14px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.8px;
-            color: #1a3a52;
-            margin-bottom: 8px;
-        }
-
-        .lead-headline {
-            font-size: 30px;
-            font-weight: 700;
-            margin-bottom: 10px;
-            color: #111;
-        }
-
-        .lead-standfirst {
-            font-size: 18px;
-            color: #555;
-            margin-bottom: 10px;
-        }
-
-        .meta {
-            font-size: 14px;
-            color: #777;
-        }
-
-        .story-list {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 18px;
-        }
-
-        .story {
-            padding-bottom: 15px;
-            border-bottom: 1px solid #eee;
-        }
-
-        .story:last-child {
-            border-bottom: none;
-        }
-
-        .story-title {
-            font-size: 20px;
-            font-weight: 600;
-            margin-bottom: 6px;
-            color: #1a3a52;
-        }
-
-        .story-summary {
-            font-size: 16px;
-            color: #555;
-        }
-
-        .sidebar-section {
-            margin-bottom: 25px;
-            padding-bottom: 18px;
-            border-bottom: 1px solid #ddd;
-        }
-
-        .sidebar-title {
-            font-size: 15px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.6px;
-            color: #1a3a52;
-            margin-bottom: 10px;
-        }
-
-        .sidebar-item {
-            font-size: 16px;
-            margin-bottom: 8px;
-        }
-
-        .sidebar-item span {
-            display: block;
-            font-size: 14px;
-            color: #999;
-        }
-
-        .ad {
-            background: #f0f0f0;
-            border: 1px solid #ddd;
-            padding: 12px;
-            font-size: 14px;
-            text-align: center;
-            color: #555;
-        }
-
-        .ad-title {
-            font-weight: 700;
-            margin-bottom: 5px;
-        }
-
-        .footer {
-            margin-top: auto;
-            border-top: 1px solid #ddd;
-            padding: 15px 30px;
-            font-size: 13px;
-            color: #777;
-            text-align: center;
-            background: #f7f7f7;
+        .footer{
+            border-top:1px solid #ccc;
+            padding:10px;
+            font-size:11px;
+            color:#777;
+            text-align:center;
+            background:#f7f7f7;
         }
     </style>
 </head>
 <body>
 <div class="page">
-    <header class="header">
-        <div class="masthead">
-            <div>
-                <div class="logo">Defence &amp; Security Herald</div>
-                <div class="tagline">Independent coverage of UK defence, cyber and security policy</div>
-            </div>
-        </div>
-        <nav class="nav">
-            <a href="#">Home</a>
-            <a href="#">Defence</a>
-            <a href="#">Cyber</a>
-            <a href="#">Analysis</a>
-            <a href="#">UK Regions</a>
-        </nav>
+    <div class="top-bar">
+        Thursday, 15 January 2026 &nbsp;|&nbsp; UK Defence Mail Online – Latest defence, cyber and security headlines
+    </div>
+
+    <header class="masthead">
+        <div class="masthead-title">UK Defence Mail Online</div>
+        <div class="masthead-sub">News • Defence • Cyber • Comment</div>
     </header>
+
+    <nav class="nav">
+        <a href="#">News</a>
+        <a href="#">Defence</a>
+        <a href="#">Cyber</a>
+        <a href="#">World</a>
+        <a href="#">Science</a>
+        <a href="#">Comment</a>
+    </nav>
 
     <main class="content">
         <!-- MAIN COLUMN -->
         <section>
-            <div class="lead-story">
-                <div class="section-label">Top story</div>
+            <article class="lead">
+                <div class="meta">DEFENCE EXCLUSIVE</div>
                 <a href="article-1.html">
-                    <h1 class="lead-headline">
-                        UK Defence Investment Accelerates: £10bn Programme Strengthens Berkshire Engineering Heartland
-                    </h1>
+                    <h1>UK Defence Investment Accelerates as £10bn Programme Transforms Berkshire Engineering Heartland</h1>
                 </a>
-                <p class="lead-standfirst">
-                    Strategic Defence Review 2025 delivers sustained spending and expanded long‑range weapons and cyber capabilities, with Berkshire at the centre of the UK’s defence industrial base.
+                <p class="summary">
+                    Strategic Defence Review 2025 sets out biggest sustained rise in defence spending since the Cold War, with BAE Systems, Thales and AWE at the centre of a long‑range weapons and cyber revolution.
                 </p>
-                <p class="meta">By Sarah Mitchell • 14 January 2026</p>
-            </div>
+                <img alt="Defence sites in Berkshire" />
+                <p style="font-size:13px;color:#777;">Artist’s impression of Berkshire defence and technology corridor.</p>
+            </article>
 
-            <div class="section-label">More in this edition</div>
-            <div class="story-list">
-                <article class="story">
+            <div class="sub-grid">
+                <article class="teaser">
+                    <div class="meta">ALERT</div>
                     <a href="article-2.html">
-                        <h2 class="story-title">
-                            Intelligence Alert: Russia Planning Imminent Dual Cyber‑Conventional Attack on UK Defence Infrastructure
-                        </h2>
+                        <h2>‘Weeks not months’: intelligence fears dual cyber‑conventional strike on UK defence infrastructure</h2>
                     </a>
-                    <p class="story-summary">
-                        Senior defence intelligence sources warn of a coordinated campaign targeting Berkshire nuclear defence facilities, with attackers reportedly preparing to masquerade as environmental protestors.
+                    <p>
+                        Anonymous security sources claim Russian‑backed operators are already inside key networks and may use protest activity as cover for physical disruption at nuclear‑linked sites.
+                    </p>
+                </article>
+
+                <article class="teaser">
+                    <div class="meta">ANALYSIS</div>
+                    <h2>Can Britain’s cyber defences keep up with rising threats?</h2>
+                    <p>
+                        Officials insist new government cyber plans will harden critical infrastructure, but insiders warn skills shortages and legacy systems remain a drag on resilience.
                     </p>
                 </article>
             </div>
@@ -255,38 +217,38 @@
 
         <!-- SIDEBAR -->
         <aside>
-            <div class="sidebar-section">
-                <div class="sidebar-title">Latest headlines</div>
-                <div class="sidebar-item">
-                    UK unveils updated cyber action plan
-                    <span>Policy • 5 January 2026</span>
-                </div>
-                <div class="sidebar-item">
-                    AWE announces new recruitment campaign
-                    <span>People • 10 January 2026</span>
-                </div>
-                <div class="sidebar-item">
-                    Thales expands Berkshire cyber operations hub
-                    <span>Industry • 8 January 2026</span>
-                </div>
+            <div class="ad">
+                <div class="ad-title">Sponsored: Secure Cloud for Defence</div>
+                Military‑grade UK data centres with 24/7 monitoring. Enquire via your organisation’s procurement portal.
             </div>
 
-            <div class="sidebar-section">
-                <div class="sidebar-title">Briefings</div>
-                <div class="sidebar-item">Hybrid warfare and UK critical infrastructure</div>
-                <div class="sidebar-item">Long‑range strike and extended deterrence</div>
-                <div class="sidebar-item">Managing insider risk in defence programmes</div>
+            <div class="sidebar-block">
+                <div class="sidebar-title">Most read</div>
+                <div class="side-link">Exclusive: MoD fast‑tracks long‑range missile trials in response to rising tensions.</div>
+                <div class="side-link">Inside the Berkshire labs designing the UK’s next‑generation cyber defences.</div>
+                <div class="side-link">Revealed: how supply‑chain vulnerabilities expose defence primes to hidden risk.</div>
             </div>
 
             <div class="ad">
-                <div class="ad-title">Berkshire Defence &amp; Cyber Forum 2026</div>
-                <p>Two‑day closed‑door event for security, intelligence and operations leaders. Request an invitation through your organisation’s security office.</p>
+                <div class="ad-title">Ad: Cyber Awareness e‑Learning</div>
+                Interactive training for engineers and project teams. Track completion and phishing resilience in real time.
+            </div>
+
+            <div class="sidebar-block">
+                <div class="sidebar-title">Daily briefing</div>
+                <div class="side-link">Morning sitrep: overnight developments in Europe and the Indo‑Pacific.</div>
+                <div class="side-link">Explainer: what SDR 2025 means for UK industry.</div>
+            </div>
+
+            <div class="ad">
+                <div class="ad-title">Sponsored: Career Hub</div>
+                Browse cleared roles in systems engineering, cyber defence and security operations across the UK.
             </div>
         </aside>
     </main>
 
     <footer class="footer">
-        Defence &amp; Security Herald © 2026. All rights reserved. | Not affiliated with any government department.
+        © 2026 UK Defence Mail Online. This is a training environment for staff awareness and does not represent real news coverage.
     </footer>
 </div>
 </body>
